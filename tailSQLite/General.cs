@@ -1,4 +1,8 @@
-﻿using System;
+﻿/* ------------------------------------
+ * Created By BurnSoft
+ * www.burnsoft.net
+ *------------------------------------- */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

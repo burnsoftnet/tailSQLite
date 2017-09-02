@@ -1,4 +1,8 @@
-﻿using System;
+﻿/* ------------------------------------
+ * Created By BurnSoft
+ * www.burnsoft.net
+ *------------------------------------- */
+using System;
 using System.Data.SQLite;
 
 namespace BurnSoft.Data

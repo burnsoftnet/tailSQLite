@@ -19,7 +19,7 @@ namespace tailSQLite
         private static string _table;
         private static string _table_identity;
         private static int _interval;
-        private static int _identitySeed;
+        private static long _identitySeed;
         private static string _dbname;
         static void Main(string[] args)
         {
@@ -28,6 +28,8 @@ namespace tailSQLite
             _interval = General.GetCommand(args, "t", 5, ref didexist);
             _table = General.GetCommand(args, "table", "", ref didexist);
             _dbname = General.GetCommand(args, "db","", ref didexist);
+            _table_identity = General.GetCommand(args, "idcol", "", ref didexist);
+           
             _identitySeed = 0;
             Console.WriteLine("t switch value is : {0}",_interval);
             Console.WriteLine("Table switch is: {0}", _table);
@@ -48,11 +50,12 @@ namespace tailSQLite
             string errMsg = "";
             if (MySQLite.ConnectDB(_dbname,ref errMsg))
             {
-                string SQL = "SELECT * from " + _table;
                 if (_identitySeed != 0)
                 {
-                    SQL += ""
+                    _identitySeed = MySQLite.getMaxID(_dbname, _table, _table_identity, ref errMsg);
                 }
+                string SQL = "";
+
             }
         }
     }

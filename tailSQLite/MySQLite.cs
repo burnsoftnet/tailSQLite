@@ -96,6 +96,27 @@ namespace BurnSoft.Data
         static public long getMaxID (string dbName, string table, string identityColumn, ref string errMsg)
         {
             long lAns = 0;
+            string errorMsg = "";
+            if (MySQLite.ConnectDB(dbName,ref errorMsg))
+            {
+                string SQL = "SELECT max(" + identityColumn + ") as maxid from " + table;
+                SQLiteCommand CMD = new SQLiteCommand(SQL, MySQLite.conn);
+                using (SQLiteDataReader RS = CMD.ExecuteReader())
+                {
+                    while (RS.Read())
+                    {
+                        lAns = RS.GetInt32(0);
+                    }
+                    RS.Close();
+                }
+                CMD = null;
+                MySQLite.CloseDB();
+
+                 
+            } else
+            {
+                errMsg = errorMsg;
+            }
 
             return lAns;
         }

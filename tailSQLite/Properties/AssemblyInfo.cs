@@ -6,12 +6,12 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("tailSQLite")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("tail a selected table from a sqlite database")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("BurnSoft www.burnsoft.net")]
 [assembly: AssemblyProduct("tailSQLite")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyTrademark("www.burnsoft.net")]
 [assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible 

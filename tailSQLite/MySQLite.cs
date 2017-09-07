@@ -4,6 +4,7 @@
  *------------------------------------- */
 using System;
 using System.Data.SQLite;
+using System.Collections;
 
 namespace BurnSoft.Data
 {
@@ -92,7 +93,15 @@ namespace BurnSoft.Data
             }
             return bAns;
         }
-
+        /// <summary>
+        /// Get the Max value passed form the identityColumn to set the _identity seed in the  main application
+        /// so that it will now when to start looking through thte database
+        /// </summary>
+        /// <param name="dbName">database name and path</param>
+        /// <param name="table">table name</param>
+        /// <param name="identityColumn">the column that will contain the idenity field, usually something with an auto incemrent values</param>
+        /// <param name="errMsg">error message returned from connecting to the database</param>
+        /// <returns></returns>
         static public long getMaxID (string dbName, string table, string identityColumn, ref string errMsg)
         {
             long lAns = 0;
@@ -119,6 +128,36 @@ namespace BurnSoft.Data
             }
 
             return lAns;
+        }
+        /// <summary>
+        /// return an arraylist of all the tables for the selected database
+        /// </summary>
+        /// <param name="dbname">database name and path</param>
+        /// <param name="errMsg">error message form database</param>
+        /// <returns></returns>
+        static public ArrayList listTables(string dbname, ref string errMsg)
+        {
+            ArrayList aAns = new ArrayList();
+            string errorMsg = "";
+            string SQL = "SELECT name FROM sqlite_master where type='table';";
+            if (ConnectDB(dbname,ref errorMsg))
+            {
+                SQLiteCommand CMD = new SQLiteCommand(SQL, conn);
+                using (SQLiteDataReader RS = CMD.ExecuteReader())
+                {
+                    while (RS.Read())
+                    {
+                        aAns.Add(RS.GetString(0));
+                    }
+                    RS.Close();
+                }
+                CMD = null;
+                MySQLite.CloseDB();
+            } else
+            {
+                errMsg = errorMsg;
+            }
+            return aAns;
         }
     }
 }

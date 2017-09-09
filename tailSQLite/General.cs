@@ -13,6 +13,36 @@ namespace BurnSoft
     public class General
     {
         /// <summary>
+        /// Auto detect which switch was used to seperate the commands. Since this is all up to the programmer
+        /// on how or what switches the user is able to use, this method combined with the GetCommends functions listed below
+        /// the user or programmer can easily saw use --command, /command, -command or even ?command
+        /// as long as the it is something that is not an alphabetical character that is first, it can be used as a switch.
+        /// </summary>
+        /// <param name="sValue">One of the parameters that was passed</param>
+        /// <returns></returns>
+        static private string detectSwitch(string sValue)
+        {
+            string sAns = "";
+            foreach (char c in sValue)
+            {
+                if (!char.IsLetter(c))
+                {
+                    if (sAns.Equals(""))
+                    {
+                        sAns = c.ToString();
+                    } else
+                    {
+                        sAns += c.ToString();
+                    }
+                } else
+                {
+                    break;
+                }
+            }
+            return sAns;
+        }
+        #region "Get Command arguments"
+        /// <summary>
         /// The GetCommand will parse through the command arguments that was passed to the application
         /// and look for the switch that you want it to look for and return that value
         /// </summary>
@@ -22,27 +52,29 @@ namespace BurnSoft
         /// <param name="DidExist">a boolean value to us if there are additional action you want to take after the GetCommand completes</param>
         /// <param name="Switch">the charcter that was used for the command switch i.e ( /, --, -, etc)</param>
         /// <returns>string value</returns>
-        static public string GetCommand(string[] args,string strLookFor, string sDefault, ref bool DidExist,string Switch = "/")
+        static public string GetCommand(string[] args, string strLookFor, string sDefault, ref bool DidExist)
         {
             string sAns = "";
             DidExist = false;
-            
+
             int cmdCount = args.Length;
             string sValue;
-            for (int i=0; i <= cmdCount -1; i++)
+            for (int i = 0; i <= cmdCount - 1; i++)
             {
                 sValue = args[i];
+                string Switch = detectSwitch(sValue);
                 sValue = sValue.Replace(Switch, "");
                 string[] newValue = sValue.Split('=');
                 int myLower = newValue.GetLowerBound(0);
                 int myHigher = newValue.GetUpperBound(0);
-                
-                if (newValue[myLower].Equals(strLookFor,StringComparison.OrdinalIgnoreCase))
+
+                if (newValue[myLower].Equals(strLookFor, StringComparison.OrdinalIgnoreCase))
                 {
-                    if (myHigher != 0 )
+                    if (myHigher != 0)
                     {
                         sAns = newValue[myHigher];
-                    } else
+                    }
+                    else
                     {
                         sAns = sDefault;
                     }
@@ -53,7 +85,7 @@ namespace BurnSoft
             }
             return sAns;
         }
-        
+
         /// <summary>
         /// The GetCommand will parse through the command arguments that was passed to the application
         /// and look for the switch that you want it to look for and return that value
@@ -64,25 +96,27 @@ namespace BurnSoft
         /// <param name="DidExist">a boolean value to us if there are additional action you want to take after the GetCommand completes</param>
         /// <param name="Switch">the charcter that was used for the command switch i.e ( /, --, -, etc)</param>
         /// <returns>Integer Value</returns>
-        static public int GetCommand(string[] args, string strLookFor, int iDefault, ref bool DidExist,string Switch="/")
+        static public int GetCommand(string[] args, string strLookFor, int iDefault, ref bool DidExist)
         {
             int iAns = 0;
             DidExist = false;
             int cmdCount = args.Length;
             string sValue;
-            for (int i=0; i <= cmdCount -1; i++)
+            for (int i = 0; i <= cmdCount - 1; i++)
             {
                 sValue = args[i];
-                sValue = sValue.Replace(Switch,"");
+                string Switch = detectSwitch(sValue);
+                sValue = sValue.Replace(Switch, "");
                 string[] newValue = sValue.Split('=');
                 int myLower = newValue.GetLowerBound(0);
                 int myHigher = newValue.GetUpperBound(0);
-                if (newValue[myLower].Equals(strLookFor,StringComparison.OrdinalIgnoreCase))
+                if (newValue[myLower].Equals(strLookFor, StringComparison.OrdinalIgnoreCase))
                 {
-                    if (myHigher !=0)
+                    if (myHigher != 0)
                     {
                         iAns = Convert.ToInt32(newValue[myHigher]);
-                    } else
+                    }
+                    else
                     {
                         iAns = iDefault;
                     }
@@ -102,25 +136,27 @@ namespace BurnSoft
         /// <param name="DidExist">a boolean value to us if there are additional action you want to take after the GetCommand completes</param>
         /// <param name="Switch">the charcter that was used for the command switch i.e ( /, --, -, etc)</param>
         /// <returns>boolean</returns>
-        static public bool GetCommand(string[] args, string strLookFor, bool bDefault, ref bool DidExist, string Switch = "/")
+        static public bool GetCommand(string[] args, string strLookFor, bool bDefault, ref bool DidExist)
         {
             bool bAns = false;
             DidExist = false;
             int cmdCount = args.Length;
             string sValue;
-            for (int i=0; i <= cmdCount -1; i++)
+            for (int i = 0; i <= cmdCount - 1; i++)
             {
                 sValue = args[i];
+                string Switch = detectSwitch(sValue);
                 sValue = sValue.Replace(Switch, "");
                 string[] newValue = sValue.Split('=');
                 int myLower = newValue.GetLowerBound(0);
                 int myHiger = newValue.GetUpperBound(0);
-                if (newValue[myLower].Equals(strLookFor,StringComparison.OrdinalIgnoreCase))
+                if (newValue[myLower].Equals(strLookFor, StringComparison.OrdinalIgnoreCase))
                 {
                     if (myHiger != 0)
                     {
                         bAns = Convert.ToBoolean(newValue[myHiger]);
-                    } else
+                    }
+                    else
                     {
                         bAns = true;
                     }
@@ -130,5 +166,7 @@ namespace BurnSoft
             }
             return bAns;
         }
+
+        #endregion
     }
 }

@@ -13,6 +13,7 @@ namespace BurnSoft.Data
     /// </summary>
     public class MySQLite
     {
+        #region "Connection Methods"
         /// <summary>
         /// Public facing connection Object
         /// </summary>
@@ -43,7 +44,8 @@ namespace BurnSoft.Data
                 conn = new SQLiteConnection(myConnectionString(dbname));
                 conn.Open();
                 bAns = true;
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 sErrMsg = ex.Message.ToString();
             }
@@ -60,6 +62,8 @@ namespace BurnSoft.Data
             }
             conn = null;
         }
+        #endregion
+        #region "Execution Methods"
         /// <summary>
         /// execute a t-sql statement, if it was successfull it will return true, if it is false, 
         /// then the error sErrMsg will contain any error messages
@@ -68,13 +72,13 @@ namespace BurnSoft.Data
         /// <param name="mySQL">t-sql statement that you want to execute</param>
         /// <param name="sErrMsg">any error messages that was caught</param>
         /// <returns></returns>
-        static public bool runQuery (string dbname, string mySQL, ref string sErrMsg)
+        static public bool runQuery(string dbname, string mySQL, ref string sErrMsg)
         {
             bool bAns = false;
             string ErrMsg = "";
             try
             {
-                if (ConnectDB(dbname,ref ErrMsg))
+                if (ConnectDB(dbname, ref ErrMsg))
                 {
                     SQLiteCommand CMD = new SQLiteCommand();
                     CMD.CommandText = mySQL;
@@ -83,11 +87,13 @@ namespace BurnSoft.Data
                     CMD.Connection.Close();
                     CloseDB();
                     bAns = true;
-                } else
+                }
+                else
                 {
                     sErrMsg = ErrMsg;
                 }
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 sErrMsg = ex.Message.ToString();
             }
@@ -102,11 +108,11 @@ namespace BurnSoft.Data
         /// <param name="identityColumn">the column that will contain the idenity field, usually something with an auto incemrent values</param>
         /// <param name="errMsg">error message returned from connecting to the database</param>
         /// <returns></returns>
-        static public long getMaxID (string dbName, string table, string identityColumn, ref string errMsg)
+        static public long getMaxID(string dbName, string table, string identityColumn, ref string errMsg)
         {
             long lAns = 0;
             string errorMsg = "";
-            if (MySQLite.ConnectDB(dbName,ref errorMsg))
+            if (MySQLite.ConnectDB(dbName, ref errorMsg))
             {
                 string SQL = "SELECT max(" + identityColumn + ") as maxid from " + table;
                 SQLiteCommand CMD = new SQLiteCommand(SQL, MySQLite.conn);
@@ -121,8 +127,9 @@ namespace BurnSoft.Data
                 CMD = null;
                 MySQLite.CloseDB();
 
-                 
-            } else
+
+            }
+            else
             {
                 errMsg = errorMsg;
             }
@@ -140,7 +147,7 @@ namespace BurnSoft.Data
             ArrayList aAns = new ArrayList();
             string errorMsg = "";
             string SQL = "SELECT name FROM sqlite_master where type='table';";
-            if (ConnectDB(dbname,ref errorMsg))
+            if (ConnectDB(dbname, ref errorMsg))
             {
                 SQLiteCommand CMD = new SQLiteCommand(SQL, conn);
                 using (SQLiteDataReader RS = CMD.ExecuteReader())
@@ -153,11 +160,14 @@ namespace BurnSoft.Data
                 }
                 CMD = null;
                 MySQLite.CloseDB();
-            } else
+            }
+            else
             {
                 errMsg = errorMsg;
             }
             return aAns;
         }
+
+        #endregion
     }
 }

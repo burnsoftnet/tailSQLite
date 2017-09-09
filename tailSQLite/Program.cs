@@ -66,6 +66,7 @@ namespace tailSQLite
             }
             
         }
+        
         /// <summary>
         /// Used for the Command arguements to alert and exit if a
         /// required field/switch is missing

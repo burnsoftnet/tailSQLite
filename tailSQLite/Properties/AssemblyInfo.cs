@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("tailSQLite")]
-[assembly: AssemblyDescription("tail a selected table from a sqlite database")]
+[assembly: AssemblyDescription("This is an attempt to create an application that will act like a regular tail but for sqlite.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("BurnSoft www.burnsoft.net")]
 [assembly: AssemblyProduct("tailSQLite")]

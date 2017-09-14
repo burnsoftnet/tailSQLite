@@ -167,7 +167,39 @@ namespace BurnSoft.Data
             }
             return aAns;
         }
+        /// <summary>
+        /// Get All the columns from the selected table
+        /// </summary>
+        /// <param name="dbname">database name and path</param>
+        /// <param name="table">table in database</param>
+        /// <param name="errMsg">returned error message</param>
+        /// <returns>ArrayList</returns>
+        static public ArrayList listColumns(string dbname, string table, ref string errMsg)
+        {
+            ArrayList aAns = new ArrayList();
+            try
+            {
+                string SQL = "select * from " + table;
+                string errorMsg = "";
+                if (ConnectDB(dbname, ref errorMsg))
+                {
+                    SQLiteCommand CMD = new SQLiteCommand(SQL, conn);
+                    var rs = CMD.ExecuteReader();
+                    for (var i = 0; i < rs.FieldCount; i++)
+                    {
+                        aAns.Add(rs.GetName(i));
+                    }
+                } else
+                {
+                    throw new Exception(errorMsg);
+                }
+            } catch (Exception ex)
+            {
+                errMsg = ex.Message.ToString();
+            }
+            return aAns;
 
+        }
         #endregion
     }
 }

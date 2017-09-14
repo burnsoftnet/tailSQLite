@@ -1,2 +1,3 @@
 # tailSQLite
-This is an attempt to make an application to tail a SQLLite database, based on the table or view that you wish to follow and watch while your application interacts with the database.
+This is an attempt to create an application that will act like a regular tail but for sqlite.
+This will allow you to pass the SQLite database and the table that you want to watch and have the program refresh every few seconds.

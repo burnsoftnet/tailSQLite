@@ -36,6 +36,7 @@ namespace tailSQLite
             {
                 //-showcolumns -tablename=app_project_name --db=C:\BSAP\bsap_client.db
                 //-showtables --db=C:\BSAP\bsap_client.db
+                //-table=monitoring_session /idcol=id --db=C:\BSAP\bsap_client.db
                 bool didexist = false;
                 _DoTail = false;
                 _dbname = General.GetCommand(args, "db", "", ref didexist);
@@ -207,15 +208,39 @@ namespace tailSQLite
         /// </summary>
         static void startTail()
         {
-            string errMsg = "";
-            if (MySQLite.ConnectDB(_dbname,ref errMsg))
+            try
             {
-                if (_identitySeed != 0)
+                string errMsg = "";
+                if (MySQLite.ConnectDB(_dbname, ref errMsg))
                 {
-                    _identitySeed = MySQLite.getMaxID(_dbname, _table, _table_identity, ref errMsg);
-                }
-                //string SQL = "";
+                    if (_identitySeed != 0)
+                    {
+                        _identitySeed = MySQLite.getMaxID(_dbname, _table, _table_identity, ref errMsg);
+                    }
+                    string SQL = "select * from " + _table + " where id > " + _identitySeed;
+                    SQLiteCommand CMD = new SQLiteCommand(SQL, MySQLite.conn);
+                    using (SQLiteDataReader rs = CMD.ExecuteReader())
+                    {
+                        int columncount = rs.FieldCount;
+                        while (rs.Read())
+                        {
+                            for (int i =0; i<columncount; i++)
+                            {
 
+                            }
+                        }
+                        rs.Close();
+                    }
+                    CMD = null;
+                    MySQLite.CloseDB();
+
+                } else
+                {
+                    throw new Exception(errMsg);
+                }
+            } catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message.ToString());
             }
         }
     }

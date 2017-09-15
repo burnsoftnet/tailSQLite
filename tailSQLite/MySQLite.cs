@@ -17,7 +17,7 @@ namespace BurnSoft.Data
         /// <summary>
         /// Public facing connection Object
         /// </summary>
-        static public SQLiteConnection conn;
+        public SQLiteConnection conn;
 
         /// <summary>
         /// Basic Connection string format that is used in this class or you can use outside outside of this class
@@ -36,7 +36,7 @@ namespace BurnSoft.Data
         /// <param name="dbname">name and path of the database</param>
         /// <param name="sErrMsg">any error messages that occured</param>
         /// <returns></returns>
-        static public bool ConnectDB(string dbname, ref string sErrMsg)
+        public bool ConnectDB(string dbname, ref string sErrMsg)
         {
             bool bAns = false;
             try
@@ -54,7 +54,7 @@ namespace BurnSoft.Data
         /// <summary>
         /// Close the connection that is used by the conn object if it is open, then set to null
         /// </summary>
-        static public void CloseDB()
+        public void CloseDB()
         {
             if (conn.State != System.Data.ConnectionState.Closed)
             {
@@ -72,7 +72,7 @@ namespace BurnSoft.Data
         /// <param name="mySQL">t-sql statement that you want to execute</param>
         /// <param name="sErrMsg">any error messages that was caught</param>
         /// <returns></returns>
-        static public bool runQuery(string dbname, string mySQL, ref string sErrMsg)
+        public bool runQuery(string dbname, string mySQL, ref string sErrMsg)
         {
             bool bAns = false;
             string ErrMsg = "";
@@ -108,14 +108,14 @@ namespace BurnSoft.Data
         /// <param name="identityColumn">the column that will contain the idenity field, usually something with an auto incemrent values</param>
         /// <param name="errMsg">error message returned from connecting to the database</param>
         /// <returns></returns>
-        static public long getMaxID(string dbName, string table, string identityColumn, ref string errMsg)
+        public long getMaxID(string dbName, string table, string identityColumn, ref string errMsg)
         {
             long lAns = 0;
             string errorMsg = "";
-            if (MySQLite.ConnectDB(dbName, ref errorMsg))
+            if (ConnectDB(dbName, ref errorMsg))
             {
                 string SQL = "SELECT max(" + identityColumn + ") as maxid from " + table;
-                SQLiteCommand CMD = new SQLiteCommand(SQL, MySQLite.conn);
+                SQLiteCommand CMD = new SQLiteCommand(SQL, conn);
                 using (SQLiteDataReader RS = CMD.ExecuteReader())
                 {
                     while (RS.Read())
@@ -125,9 +125,7 @@ namespace BurnSoft.Data
                     RS.Close();
                 }
                 CMD = null;
-                MySQLite.CloseDB();
-
-
+                CloseDB();
             }
             else
             {
@@ -142,7 +140,7 @@ namespace BurnSoft.Data
         /// <param name="dbname">database name and path</param>
         /// <param name="errMsg">error message form database</param>
         /// <returns></returns>
-        static public ArrayList listTables(string dbname, ref string errMsg)
+        public ArrayList listTables(string dbname, ref string errMsg)
         {
             ArrayList aAns = new ArrayList();
             string errorMsg = "";
@@ -159,7 +157,7 @@ namespace BurnSoft.Data
                     RS.Close();
                 }
                 CMD = null;
-                MySQLite.CloseDB();
+                CloseDB();
             }
             else
             {
@@ -174,7 +172,7 @@ namespace BurnSoft.Data
         /// <param name="table">table in database</param>
         /// <param name="errMsg">returned error message</param>
         /// <returns>ArrayList</returns>
-        static public ArrayList listColumns(string dbname, string table, ref string errMsg)
+        public ArrayList listColumns(string dbname, string table, ref string errMsg)
         {
             ArrayList aAns = new ArrayList();
             try
@@ -189,6 +187,8 @@ namespace BurnSoft.Data
                     {
                         aAns.Add(rs.GetName(i));
                     }
+                    CMD = null;
+                    CloseDB();
                 } else
                 {
                     throw new Exception(errorMsg);

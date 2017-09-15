@@ -38,7 +38,7 @@ namespace tailSQLite
                 //-showtables --db=C:\BSAP\bsap_client.db
                 //-table=monitoring_session /idcol=id --db=C:\BSAP\bsap_client.db
                 bool didexist = false;
-                _DoTail = false;
+                _DoTail = General.GetCommand(args,"tail",false, ref didexist);
                 _dbname = General.GetCommand(args, "db", "", ref didexist);
                 isRequired("/db", didexist);
                 didexist = false;
@@ -115,8 +115,9 @@ namespace tailSQLite
         /// <param name="o"></param>
         private static void TimerCallback(Object o)
         {
-           //add sqlite tail function here
+            //add sqlite tail function here
             // Force a garbage collection to occur.
+            startTail();
             GC.Collect();
         }
         /// <summary>
@@ -129,7 +130,8 @@ namespace tailSQLite
             {
                 ArrayList tableList = new ArrayList();
                 string errorMsg = "";
-                tableList = MySQLite.listTables(_dbname, ref errorMsg);
+                MySQLite obj = new MySQLite();
+                tableList = obj.listTables(_dbname, ref errorMsg);
                 if (tableList != null)
                 {
                     Console.WriteLine("table name");
@@ -171,7 +173,9 @@ namespace tailSQLite
             try
             {
                 string errorMsg = "";
-                ArrayList columns = MySQLite.listColumns(_dbname, stable, ref errorMsg);
+                MySQLite obj = new MySQLite();
+
+                ArrayList columns = obj.listColumns(_dbname, stable, ref errorMsg);
                 if (columns.Count > 0)
                 {
                     Console.WriteLine("column name");
@@ -179,7 +183,6 @@ namespace tailSQLite
                     foreach (string value in columns)
                     {
                         Console.WriteLine(value);
-                        ;
                     }
                     Console.WriteLine("");
                 }
@@ -211,29 +214,41 @@ namespace tailSQLite
             try
             {
                 string errMsg = "";
-                if (MySQLite.ConnectDB(_dbname, ref errMsg))
+                MySQLite obj = new MySQLite();
+                ArrayList columns = obj.listColumns(_dbname, _table, ref errMsg);
+                int columncount = columns.Count;
+
+                if (_identitySeed == 0)
                 {
-                    if (_identitySeed != 0)
-                    {
-                        _identitySeed = MySQLite.getMaxID(_dbname, _table, _table_identity, ref errMsg);
-                    }
+                    _identitySeed = obj.getMaxID(_dbname, _table, _table_identity, ref errMsg);
+                }
+
+                if (obj.ConnectDB(_dbname, ref errMsg))
+                {
                     string SQL = "select * from " + _table + " where id > " + _identitySeed;
-                    SQLiteCommand CMD = new SQLiteCommand(SQL, MySQLite.conn);
+                    //Console.WriteLine(SQL);
+                    SQLiteCommand CMD = new SQLiteCommand(SQL, obj.conn);
                     using (SQLiteDataReader rs = CMD.ExecuteReader())
                     {
-                        int columncount = rs.FieldCount;
+
                         while (rs.Read())
                         {
-                            for (int i =0; i<columncount; i++)
+                            foreach (string value in columns)
                             {
-
+                                var svalue = rs.GetValue(rs.GetOrdinal(value));
+                                Console.WriteLine("{0}: {1}", value, svalue);
+                                if (value.Equals(_table_identity))
+                                {
+                                    _identitySeed = Convert.ToInt32(svalue);
+                                }
                             }
+                            Console.WriteLine("");
                         }
                         rs.Close();
                     }
                     CMD = null;
-                    MySQLite.CloseDB();
-
+                    obj.CloseDB();
+                    obj = null;
                 } else
                 {
                     throw new Exception(errMsg);

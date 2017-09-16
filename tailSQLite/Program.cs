@@ -34,9 +34,6 @@ namespace tailSQLite
         {
             try
             {
-                //-showcolumns -tablename=app_project_name --db=C:\BSAP\bsap_client.db
-                //-showtables --db=C:\BSAP\bsap_client.db
-                //-table=monitoring_session /idcol=id --db=C:\BSAP\bsap_client.db
                 bool didexist = false;
                 _DoTail = General.GetCommand(args,"tail",false, ref didexist);
                 _dbname = General.GetCommand(args, "db", "", ref didexist);
@@ -56,10 +53,9 @@ namespace tailSQLite
                 _showcolumns = General.GetCommand(args, "showcolumns", false, ref didexist);
                 if (_showcolumns)
                 {
-                    didexist = false;
-                    _tablename = General.GetCommand(args, "tablename", "", ref didexist);
-                    if (didexist)
+                    if (_table.Length > 0)
                     {
+                        _tablename = _table;
                         showColumns(_tablename);
                     } else
                     {

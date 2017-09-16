@@ -26,6 +26,8 @@ namespace tailSQLite
         private static bool _DoTail;
         private static string _tablename;
         private static bool _showcolumns;
+        private static bool _DEBUG;
+        private static Timer t;
         /// <summary>
         /// Initialize private variables with the command arguments that were passed to the application
         /// </summary>
@@ -35,6 +37,7 @@ namespace tailSQLite
             try
             {
                 bool didexist = false;
+                _DEBUG = General.GetCommand(args, "debug", false, ref didexist);
                 _DoTail = General.GetCommand(args,"tail",false, ref didexist);
                 _dbname = General.GetCommand(args, "db", "", ref didexist);
                 isRequired("/db", didexist);
@@ -80,7 +83,10 @@ namespace tailSQLite
 
             if (!_showTables && _DoTail)
             {
-                Timer t = new Timer(TimerCallback, null, 0, (_interval * 1000));
+                //Timer t = new Timer(TimerCallback, null, 0, (_interval * 1000));
+                TimeSpan TimeToRun = new TimeSpan(0, 0, _interval);
+                t = new Timer(TimerCallback, null, TimeToRun, TimeToRun);
+                Console.WriteLine("Waiting for Results");
                 Console.Read();
             } else if(_showTables && !_DoTail) {
                 showtables();
@@ -222,7 +228,7 @@ namespace tailSQLite
                 if (obj.ConnectDB(_dbname, ref errMsg))
                 {
                     string SQL = "select * from " + _table + " where id > " + _identitySeed;
-                    //Console.WriteLine(SQL);
+                    if (_DEBUG) { Console.WriteLine(SQL); }
                     SQLiteCommand CMD = new SQLiteCommand(SQL, obj.conn);
                     using (SQLiteDataReader rs = CMD.ExecuteReader())
                     {

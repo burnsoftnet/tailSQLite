@@ -12,7 +12,8 @@ using System.Threading.Tasks;
 using BurnSoft;
 using BurnSoft.Data;
 using System.Data.SQLite;
-
+using System.Diagnostics;
+using System.Reflection;
 namespace tailSQLite
 {
     class Program
@@ -28,6 +29,49 @@ namespace tailSQLite
         private static bool _showcolumns;
         private static bool _DEBUG;
         private static Timer t;
+        static void showhelp()
+        {
+            Assembly assembly = Assembly.GetExecutingAssembly();
+            FileVersionInfo fvi = FileVersionInfo.GetVersionInfo(assembly.Location);
+            Console.WriteLine("{0}", fvi.Comments);
+            Console.WriteLine("");
+            Console.WriteLine("-h or -help       This Help File");
+            Console.WriteLine("-tail             Tell the app to be in tail mode, Requires the db, table and idcol parameters, the t parameter is optional");
+            Console.WriteLine("-db=DatabaseName  The path and name of the database you want to follow");
+            Console.WriteLine("-t=seconds        the number of seconds you want to refresh the trace, by default this will be 5 seconds");
+            Console.WriteLine("-table            The table name that you want to trace");
+            Console.WriteLine("-idol             the Identity column to the table that you want to tail");
+            Console.WriteLine("-showtables       Show all the tables of the database, requires the db parameter");
+            Console.WriteLine("-showcolumns      Show all the columns for the table requires the table & db parameters");
+            Console.WriteLine("-debug            Display Debug messages, currently this is just displaying on the query when running the tail.");
+            Console.WriteLine("");
+            Console.WriteLine("Examples:");
+            Console.WriteLine("");
+            Console.WriteLine("start tailing:");
+            Console.WriteLine("{0} -table=process_stats_main -idcol=id -db=C:\\BSAP\\bsap_client.db -t=5 -tail", fvi.InternalName);
+            Console.WriteLine("");
+            Console.WriteLine("Show Tables:");
+            Console.WriteLine("{0} --db=C:\\BSAP\\bsap_client.db -showtables", fvi.InternalName);
+            Console.WriteLine("");
+            Console.WriteLine("Show Columns:");
+            Console.WriteLine("{0} --db=C:\\BSAP\\bsap_client.db -table=process_stats_main -showcolumns", fvi.InternalName);
+            Console.WriteLine("");
+            Console.WriteLine("Press Any Key to Exit");
+            Console.Read();
+            //Console.WriteLine("");
+            System.Environment.Exit(0);
+        }
+        static void header()
+        {
+            
+            Assembly assembly = Assembly.GetExecutingAssembly();
+            FileVersionInfo fvi = FileVersionInfo.GetVersionInfo(assembly.Location);
+
+            Console.WriteLine("{0} v.{1}", fvi.InternalName, fvi.ProductVersion);
+            Console.WriteLine("By {0} - {1}", fvi.CompanyName,fvi.LegalCopyright);
+            Console.WriteLine("");
+            
+        }
         /// <summary>
         /// Initialize private variables with the command arguments that were passed to the application
         /// </summary>
@@ -37,6 +81,11 @@ namespace tailSQLite
             try
             {
                 bool didexist = false;
+                if (General.GetCommand(args, "help", false, ref didexist) || General.GetCommand(args, "h", false, ref didexist))
+                {
+                    header();
+                    showhelp();
+                }
                 _DEBUG = General.GetCommand(args, "debug", false, ref didexist);
                 _DoTail = General.GetCommand(args,"tail",false, ref didexist);
                 _dbname = General.GetCommand(args, "db", "", ref didexist);
@@ -80,7 +129,7 @@ namespace tailSQLite
         static void Main(string[] args)
         {
             init(args);
-
+            header();
             if (!_showTables && _DoTail)
             {
                 //Timer t = new Timer(TimerCallback, null, 0, (_interval * 1000));

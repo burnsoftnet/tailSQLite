@@ -39,8 +39,8 @@ This is an attempt to create an application that will act like a regular tail bu
 <td>Show all the columns for the table requires the table & db parameters</td>
 </tr>
 <tr>
-<td></td>
-<td></td>
+<td>debug</td>
+<td>Display Debug messages, currently this is just displaying on the query when running the tail.</td>
 </tr>
 </table>
 

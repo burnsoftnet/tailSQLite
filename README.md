@@ -11,6 +11,10 @@ This is an attempt to create an application that will act like a regular tail bu
 <th>Description</th>
 </tr>
 <tr>
+<td>-help or -h</td>
+<td>Display Help</td>
+</tr>
+<tr>
 <td>tail</td>
 <td>Tell the app to be in tail mode, Requires the db, table and idcol parameters, the t parameter is optional </td>
 </tr>

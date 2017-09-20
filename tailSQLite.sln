@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tailSQLite", "tailSQLite\tailSQLite.csproj", "{42EA2BF6-291B-41F9-990C-6D0B3E20DF2C}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "tailSqlite_Installer", "tailSqlite_Installer\tailSqlite_Installer.vdproj", "{9E53B986-764D-4754-897B-84736152046D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,8 @@ Global
 		{42EA2BF6-291B-41F9-990C-6D0B3E20DF2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{42EA2BF6-291B-41F9-990C-6D0B3E20DF2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{42EA2BF6-291B-41F9-990C-6D0B3E20DF2C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E53B986-764D-4754-897B-84736152046D}.Debug|Any CPU.ActiveCfg = Debug
+		{9E53B986-764D-4754-897B-84736152046D}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

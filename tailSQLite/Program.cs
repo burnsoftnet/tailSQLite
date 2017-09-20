@@ -287,7 +287,7 @@ namespace tailSQLite
                             foreach (string value in columns)
                             {
                                 var svalue = rs.GetValue(rs.GetOrdinal(value));
-                                Console.WriteLine("{0}: {1}", value, svalue);
+                                Console.WriteLine("{0}: {1}", value, svalue.ToString());
                                 if (value.Equals(_table_identity))
                                 {
                                     _identitySeed = Convert.ToInt32(svalue);

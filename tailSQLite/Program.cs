@@ -4,11 +4,7 @@
  *------------------------------------- */
 using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using BurnSoft;
 using BurnSoft.Data;
 using System.Data.SQLite;
@@ -29,6 +25,8 @@ namespace tailSQLite
         private static bool _showcolumns;
         private static bool _DEBUG;
         private static Timer t;
+        private static string _LOGTOFILE;
+        private static bool _DOLOG;
         static void showhelp()
         {
             Assembly assembly = Assembly.GetExecutingAssembly();
@@ -44,6 +42,7 @@ namespace tailSQLite
             Console.WriteLine("-showtables       Show all the tables of the database, requires the db parameter");
             Console.WriteLine("-showcolumns      Show all the columns for the table requires the table & db parameters");
             Console.WriteLine("-debug            Display Debug messages, currently this is just displaying on the query when running the tail.");
+            Console.WriteLine("-log=LOGNAME      Write output to a log file as well as display on screen.");
             Console.WriteLine("");
             Console.WriteLine("Examples:");
             Console.WriteLine("");
@@ -87,6 +86,7 @@ namespace tailSQLite
                     showhelp();
                 }
                 _DEBUG = General.GetCommand(args, "debug", false, ref didexist);
+                _LOGTOFILE = General.GetCommand(args, "log", "", ref _DOLOG);
                 _DoTail = General.GetCommand(args,"tail",false, ref didexist);
                 _dbname = General.GetCommand(args, "db", "", ref didexist);
                 isRequired("/db", didexist);
@@ -187,18 +187,22 @@ namespace tailSQLite
                 {
                     Console.WriteLine("table name");
                     Console.WriteLine("-----------");
+                    if (_DOLOG) { General.AppendToFile(_LOGTOFILE, "table name"); }
+                    if (_DOLOG) { General.AppendToFile(_LOGTOFILE, "-----------"); }
                     foreach (string value in tableList)
                     {
                         Console.WriteLine(value);
-                        ;
+                        if (_DOLOG) { General.AppendToFile(_LOGTOFILE,value); }
                     }
                     Console.WriteLine("");
+                    if (_DOLOG) { General.AppendToFile(_LOGTOFILE, ""); }
                 }
                 else
                 {
                     if (errorMsg.Equals(""))
                     {
                         Console.WriteLine("No Tables Listed!");
+                        if (_DOLOG) { General.AppendToFile(_LOGTOFILE, "No Tables Listed!"); }
                     }
                     else
                     {
@@ -231,17 +235,22 @@ namespace tailSQLite
                 {
                     Console.WriteLine("column name");
                     Console.WriteLine("-----------");
+                    if (_DOLOG) { General.AppendToFile(_LOGTOFILE, "column name"); }
+                    if (_DOLOG) { General.AppendToFile(_LOGTOFILE, "-----------"); }
                     foreach (string value in columns)
                     {
                         Console.WriteLine(value);
+                        if (_DOLOG) { General.AppendToFile(_LOGTOFILE, value); }
                     }
                     Console.WriteLine("");
+                    if (_DOLOG) { General.AppendToFile(_LOGTOFILE, "\n"); }
                 }
                 else
                 {
                     if (String.IsNullOrEmpty(errorMsg))
                     {
                         Console.WriteLine("No columns Listed!");
+                        if (_DOLOG) { General.AppendToFile(_LOGTOFILE, "No columns Listed!\n"); }
                     }
                     else
                     {
@@ -265,6 +274,8 @@ namespace tailSQLite
             try
             {
                 string errMsg = "";
+                string logToFile = "";
+
                 MySQLite obj = new MySQLite();
                 ArrayList columns = obj.listColumns(_dbname, _table, ref errMsg);
                 int columncount = columns.Count;
@@ -288,6 +299,7 @@ namespace tailSQLite
                             {
                                 var svalue = rs.GetValue(rs.GetOrdinal(value));
                                 Console.WriteLine("{0}: {1}", value, svalue.ToString());
+                                if (_DOLOG) { logToFile += "\n" + value + ": " + svalue.ToString(); }
                                 if (value.Equals(_table_identity))
                                 {
                                     _identitySeed = Convert.ToInt32(svalue);
@@ -300,6 +312,8 @@ namespace tailSQLite
                     CMD = null;
                     obj.CloseDB();
                     obj = null;
+                    if (_DOLOG && logToFile.Length > 0) { General.AppendToFile(_LOGTOFILE, logToFile); }
+
                 } else
                 {
                     throw new Exception(errMsg);

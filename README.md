@@ -66,6 +66,6 @@ tailSQlite --db=C:\BSAP\bsap_client.db /table=process_stats_main /showcolumns
 
 Version 1.0.0 - Fresh Release
 
-
+<center>
 [![Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=JSW8XEMQVH4BE)]
-
+</center>

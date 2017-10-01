@@ -60,6 +60,7 @@ tailSQlite --db=C:\BSAP\bsap_client.db /showtables
 **Show Columns**
 
 tailSQlite --db=C:\BSAP\bsap_client.db /table=process_stats_main /showcolumns
+
 <center>
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
 <input type="hidden" name="cmd" value="_s-xclick">
@@ -68,7 +69,6 @@ tailSQlite --db=C:\BSAP\bsap_client.db /table=process_stats_main /showcolumns
 <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
 </form>
 </center>
-
 
 
 ## Release Notes

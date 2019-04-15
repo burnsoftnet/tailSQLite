@@ -27,39 +27,45 @@ namespace tailSQLite
         private static Timer t;
         private static string _LOGTOFILE;
         private static bool _DOLOG;
+        /// <summary>
+        /// Showhelps this instance.
+        /// </summary>
         static void showhelp()
         {
             Assembly assembly = Assembly.GetExecutingAssembly();
             FileVersionInfo fvi = FileVersionInfo.GetVersionInfo(assembly.Location);
             Console.WriteLine("{0}", fvi.Comments);
             Console.WriteLine("");
-            Console.WriteLine("-h or -help       This Help File");
-            Console.WriteLine("-tail             Tell the app to be in tail mode, Requires the db, table and idcol parameters, the t parameter is optional");
-            Console.WriteLine("-db=DatabaseName  The path and name of the database you want to follow");
-            Console.WriteLine("-t=seconds        the number of seconds you want to refresh the trace, by default this will be 5 seconds");
-            Console.WriteLine("-table            The table name that you want to trace");
-            Console.WriteLine("-idol             the Identity column to the table that you want to tail");
-            Console.WriteLine("-showtables       Show all the tables of the database, requires the db parameter");
-            Console.WriteLine("-showcolumns      Show all the columns for the table requires the table & db parameters");
-            Console.WriteLine("-debug            Display Debug messages, currently this is just displaying on the query when running the tail.");
-            Console.WriteLine("-log=LOGNAME      Write output to a log file as well as display on screen.");
+            Console.WriteLine("--h or --help       This Help File");
+            Console.WriteLine("--tail             Tell the app to be in tail mode, Requires the db, table and idcol parameters, the t parameter is optional");
+            Console.WriteLine("--db=DatabaseName  The path and name of the database you want to follow");
+            Console.WriteLine("--t=seconds        the number of seconds you want to refresh the trace, by default this will be 5 seconds");
+            Console.WriteLine("--table            The table name that you want to trace");
+            Console.WriteLine("--idol             the Identity column to the table that you want to tail");
+            Console.WriteLine("--showtables       Show all the tables of the database, requires the db parameter");
+            Console.WriteLine("--showcolumns      Show all the columns for the table requires the table & db parameters");
+            Console.WriteLine("--debug            Display Debug messages, currently this is just displaying on the query when running the tail.");
+            Console.WriteLine("--log=LOGNAME      Write output to a log file as well as display on screen.");
             Console.WriteLine("");
             Console.WriteLine("Examples:");
             Console.WriteLine("");
             Console.WriteLine("start tailing:");
-            Console.WriteLine("{0} -table=process_stats_main -idcol=id -db=C:\\BSAP\\bsap_client.db -t=5 -tail", fvi.InternalName);
+            Console.WriteLine("{0} --table=process_stats_main --idcol=id --db=C:\\BSAP\\bsap_client.db --t=5 -tail", fvi.InternalName);
             Console.WriteLine("");
             Console.WriteLine("Show Tables:");
-            Console.WriteLine("{0} --db=C:\\BSAP\\bsap_client.db -showtables", fvi.InternalName);
+            Console.WriteLine("{0} --db=C:\\BSAP\\bsap_client.db --showtables", fvi.InternalName);
             Console.WriteLine("");
             Console.WriteLine("Show Columns:");
-            Console.WriteLine("{0} --db=C:\\BSAP\\bsap_client.db -table=process_stats_main -showcolumns", fvi.InternalName);
+            Console.WriteLine("{0} --db=C:\\BSAP\\bsap_client.db --table=process_stats_main --showcolumns", fvi.InternalName);
             Console.WriteLine("");
             Console.WriteLine("Press Any Key to Exit");
             Console.Read();
             //Console.WriteLine("");
             System.Environment.Exit(0);
         }
+        /// <summary>
+        /// Headers this instance.
+        /// </summary>
         static void header()
         {
             

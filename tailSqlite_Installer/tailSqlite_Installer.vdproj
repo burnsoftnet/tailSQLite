@@ -15,6 +15,18 @@
     {
         "Entry"
         {
+        "MsmKey" = "8:_14A1F3FBE231092CAC35C560BA5D0383"
+        "OwnerKey" = "8:_159ADB7F93514786874C70AADD41CAA0"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_14A1F3FBE231092CAC35C560BA5D0383"
+        "OwnerKey" = "8:_5C7FC44DCF63490CB05CD4D8605A4CF4"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_159ADB7F93514786874C70AADD41CAA0"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -39,6 +51,24 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_5B61D4C7B75D2C18C93C8931FBCFBB83"
+        "OwnerKey" = "8:_5C7FC44DCF63490CB05CD4D8605A4CF4"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_5B61D4C7B75D2C18C93C8931FBCFBB83"
+        "OwnerKey" = "8:_BADA3A0ECD59494D906AE09AC77182AE"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_5B61D4C7B75D2C18C93C8931FBCFBB83"
+        "OwnerKey" = "8:_65A7C511BB9846E99519F38B2BAE5FCF"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_5C7FC44DCF63490CB05CD4D8605A4CF4"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -47,24 +77,6 @@
         {
         "MsmKey" = "8:_65A7C511BB9846E99519F38B2BAE5FCF"
         "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_65E7505D30DDC533A5E98B0FEAED7AB6"
-        "OwnerKey" = "8:_5C7FC44DCF63490CB05CD4D8605A4CF4"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_65E7505D30DDC533A5E98B0FEAED7AB6"
-        "OwnerKey" = "8:_65A7C511BB9846E99519F38B2BAE5FCF"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_65E7505D30DDC533A5E98B0FEAED7AB6"
-        "OwnerKey" = "8:_BADA3A0ECD59494D906AE09AC77182AE"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -99,18 +111,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_E21EC7F09AD1D1DA9EE9DBFD99BBC205"
-        "OwnerKey" = "8:_159ADB7F93514786874C70AADD41CAA0"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_E21EC7F09AD1D1DA9EE9DBFD99BBC205"
-        "OwnerKey" = "8:_5C7FC44DCF63490CB05CD4D8605A4CF4"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_F746B8566E68491EAFBB1FF56BBF1CE3"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -130,25 +130,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_65A7C511BB9846E99519F38B2BAE5FCF"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_BADA3A0ECD59494D906AE09AC77182AE"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_5C7FC44DCF63490CB05CD4D8605A4CF4"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_65E7505D30DDC533A5E98B0FEAED7AB6"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -160,13 +142,31 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_159ADB7F93514786874C70AADD41CAA0"
+        "OwnerKey" = "8:_65A7C511BB9846E99519F38B2BAE5FCF"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_E21EC7F09AD1D1DA9EE9DBFD99BBC205"
+        "OwnerKey" = "8:_5B61D4C7B75D2C18C93C8931FBCFBB83"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_5C7FC44DCF63490CB05CD4D8605A4CF4"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_14A1F3FBE231092CAC35C560BA5D0383"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_159ADB7F93514786874C70AADD41CAA0"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -187,6 +187,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.6.1"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.6.1 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.6.1"
+                    }
+                }
+            }
         }
         "Release"
         {
@@ -203,6 +219,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.6.1"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.6.1 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.6.1"
+                    }
+                }
+            }
         }
     }
     "Deployable"
@@ -232,6 +264,37 @@
         }
         "File"
         {
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_14A1F3FBE231092CAC35C560BA5D0383"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_14A1F3FBE231092CAC35C560BA5D0383"
+                    {
+                    "Name" = "8:EntityFramework.DLL"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:EntityFramework.DLL"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_7E7D617C159A49939219A515B82C0DDC"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_159ADB7F93514786874C70AADD41CAA0"
             {
             "AssemblyRegister" = "3:1"
@@ -245,7 +308,7 @@
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:..\\tailSQLite\\bin\\Release\\EntityFramework.SqlServer.dll"
+            "SourcePath" = "8:\\\\Mac\\Home\\Documents\\Source_Code\\Visual Studio 2015\\Projects\\GitHub\\tailSQLite\\tailSQLite\\bin\\Release\\EntityFramework.SqlServer.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_7E7D617C159A49939219A515B82C0DDC"
@@ -276,7 +339,7 @@
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:..\\tailSQLite\\bin\\Release\\EntityFramework.dll"
+            "SourcePath" = "8:\\\\Mac\\Home\\Documents\\Source_Code\\Visual Studio 2015\\Projects\\GitHub\\tailSQLite\\tailSQLite\\bin\\Release\\EntityFramework.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_7E7D617C159A49939219A515B82C0DDC"
@@ -296,7 +359,7 @@
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_3AA9AD17B148408EB5C220D2F3F079E0"
             {
-            "SourcePath" = "8:..\\tailSQLite\\bin\\Release\\EntityFramework.xml"
+            "SourcePath" = "8:\\\\Mac\\Home\\Documents\\Source_Code\\Visual Studio 2015\\Projects\\GitHub\\tailSQLite\\tailSQLite\\bin\\Release\\EntityFramework.xml"
             "TargetName" = "8:EntityFramework.xml"
             "Tag" = "8:"
             "Folder" = "8:_7E7D617C159A49939219A515B82C0DDC"
@@ -316,7 +379,7 @@
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_47949BDF6FFB40C7863104E0EDB80228"
             {
-            "SourcePath" = "8:..\\tailSQLite\\bin\\Release\\x86\\SQLite.Interop.dll"
+            "SourcePath" = "8:\\\\Mac\\Home\\Documents\\Source_Code\\Visual Studio 2015\\Projects\\GitHub\\tailSQLite\\tailSQLite\\bin\\Release\\x86\\SQLite.Interop.dll"
             "TargetName" = "8:SQLite.Interop.dll"
             "Tag" = "8:"
             "Folder" = "8:_CE10B2169F2A4D43889696FB3D7B0179"
@@ -334,76 +397,14 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_5C7FC44DCF63490CB05CD4D8605A4CF4"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:System.Data.SQLite.EF6, Version=1.0.105.2, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_5C7FC44DCF63490CB05CD4D8605A4CF4"
-                    {
-                    "Name" = "8:System.Data.SQLite.EF6.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:..\\tailSQLite\\bin\\Release\\System.Data.SQLite.EF6.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_7E7D617C159A49939219A515B82C0DDC"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_65A7C511BB9846E99519F38B2BAE5FCF"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:tailSQLite, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_65A7C511BB9846E99519F38B2BAE5FCF"
-                    {
-                    "Name" = "8:tailSQLite.exe"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:..\\tailSQLite\\bin\\Release\\tailSQLite.exe"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_7E7D617C159A49939219A515B82C0DDC"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_65E7505D30DDC533A5E98B0FEAED7AB6"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_5B61D4C7B75D2C18C93C8931FBCFBB83"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:System.Data.SQLite, Version=1.0.105.2, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_65E7505D30DDC533A5E98B0FEAED7AB6"
+                    "_5B61D4C7B75D2C18C93C8931FBCFBB83"
                     {
                     "Name" = "8:System.Data.SQLite.DLL"
                     "Attributes" = "3:512"
@@ -427,9 +428,71 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_5C7FC44DCF63490CB05CD4D8605A4CF4"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:System.Data.SQLite.EF6, Version=1.0.105.2, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_5C7FC44DCF63490CB05CD4D8605A4CF4"
+                    {
+                    "Name" = "8:System.Data.SQLite.EF6.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:\\\\Mac\\Home\\Documents\\Source_Code\\Visual Studio 2015\\Projects\\GitHub\\tailSQLite\\tailSQLite\\bin\\Release\\System.Data.SQLite.EF6.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_7E7D617C159A49939219A515B82C0DDC"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_65A7C511BB9846E99519F38B2BAE5FCF"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:tailSQLite, Version=1.0.0.17184, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_65A7C511BB9846E99519F38B2BAE5FCF"
+                    {
+                    "Name" = "8:tailSQLite.exe"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:\\\\Mac\\Home\\Documents\\Source_Code\\Visual Studio 2015\\Projects\\GitHub\\tailSQLite\\tailSQLite\\bin\\Release\\tailSQLite.exe"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_7E7D617C159A49939219A515B82C0DDC"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_7A2BFFC6C58A41DBAE81904F10D28F8E"
             {
-            "SourcePath" = "8:..\\tailSQLite\\bin\\Release\\open.bat"
+            "SourcePath" = "8:\\\\Mac\\Home\\Documents\\Source_Code\\Visual Studio 2015\\Projects\\GitHub\\tailSQLite\\tailSQLite\\bin\\Release\\open.bat"
             "TargetName" = "8:open.bat"
             "Tag" = "8:"
             "Folder" = "8:_7E7D617C159A49939219A515B82C0DDC"
@@ -449,7 +512,7 @@
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_A6C38366684945AB8761BDACA2BCD384"
             {
-            "SourcePath" = "8:..\\tailSQLite\\bin\\Release\\System.Data.SQLite.xml"
+            "SourcePath" = "8:\\\\Mac\\Home\\Documents\\Source_Code\\Visual Studio 2015\\Projects\\GitHub\\tailSQLite\\tailSQLite\\bin\\Release\\System.Data.SQLite.xml"
             "TargetName" = "8:System.Data.SQLite.xml"
             "Tag" = "8:"
             "Folder" = "8:_7E7D617C159A49939219A515B82C0DDC"
@@ -480,7 +543,7 @@
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:..\\tailSQLite\\bin\\Release\\System.Data.SQLite.dll"
+            "SourcePath" = "8:\\\\Mac\\Home\\Documents\\Source_Code\\Visual Studio 2015\\Projects\\GitHub\\tailSQLite\\tailSQLite\\bin\\Release\\System.Data.SQLite.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_7E7D617C159A49939219A515B82C0DDC"
@@ -511,7 +574,7 @@
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:..\\tailSQLite\\bin\\Release\\System.Data.SQLite.Linq.dll"
+            "SourcePath" = "8:\\\\Mac\\Home\\Documents\\Source_Code\\Visual Studio 2015\\Projects\\GitHub\\tailSQLite\\tailSQLite\\bin\\Release\\System.Data.SQLite.Linq.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_7E7D617C159A49939219A515B82C0DDC"
@@ -531,7 +594,7 @@
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_BDF55CC762264D8796F5779C9D5218DC"
             {
-            "SourcePath" = "8:..\\tailSQLite\\bin\\Release\\tailSQLite.exe.config"
+            "SourcePath" = "8:\\\\Mac\\Home\\Documents\\Source_Code\\Visual Studio 2015\\Projects\\GitHub\\tailSQLite\\tailSQLite\\bin\\Release\\tailSQLite.exe.config"
             "TargetName" = "8:tailSQLite.exe.config"
             "Tag" = "8:"
             "Folder" = "8:_7E7D617C159A49939219A515B82C0DDC"
@@ -549,40 +612,9 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_E21EC7F09AD1D1DA9EE9DBFD99BBC205"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_E21EC7F09AD1D1DA9EE9DBFD99BBC205"
-                    {
-                    "Name" = "8:EntityFramework.DLL"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:EntityFramework.DLL"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_7E7D617C159A49939219A515B82C0DDC"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F746B8566E68491EAFBB1FF56BBF1CE3"
             {
-            "SourcePath" = "8:..\\tailSQLite\\bin\\Release\\x64\\SQLite.Interop.dll"
+            "SourcePath" = "8:\\\\Mac\\Home\\Documents\\Source_Code\\Visual Studio 2015\\Projects\\GitHub\\tailSQLite\\tailSQLite\\bin\\Release\\x64\\SQLite.Interop.dll"
             "TargetName" = "8:SQLite.Interop.dll"
             "Tag" = "8:"
             "Folder" = "8:_60B6C07873A84194AB6DFB70E3DD90FB"
@@ -602,7 +634,7 @@
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_FC65471AF9764D56AD9F986ECC496670"
             {
-            "SourcePath" = "8:..\\tailSQLite\\bin\\Release\\EntityFramework.SqlServer.xml"
+            "SourcePath" = "8:\\\\Mac\\Home\\Documents\\Source_Code\\Visual Studio 2015\\Projects\\GitHub\\tailSQLite\\tailSQLite\\bin\\Release\\EntityFramework.SqlServer.xml"
             "TargetName" = "8:EntityFramework.SqlServer.xml"
             "Tag" = "8:"
             "Folder" = "8:_7E7D617C159A49939219A515B82C0DDC"
@@ -709,15 +741,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:tailSqlite"
-        "ProductCode" = "8:{89799DEE-EFB9-4327-AD25-A373E564F4E2}"
-        "PackageCode" = "8:{FF7635DD-187A-430D-A08F-896C0ADBEC17}"
+        "ProductCode" = "8:{C307DC8E-1904-486A-8F7C-6C21927F4A5C}"
+        "PackageCode" = "8:{0B0B39F6-535A-4167-9358-1643C6B32865}"
         "UpgradeCode" = "8:{55622870-7F90-4007-8AC8-28262C169413}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:FALSE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:TRUE"
-        "ProductVersion" = "8:1.0.0"
+        "ProductVersion" = "8:1.0.2"
         "Manufacturer" = "8:burnsoft"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:https://www.burnsoft.net"

@@ -122,6 +122,14 @@ namespace tailSQLite
                 } 
 
                 _identitySeed = 0;
+                if (_DOLOG)
+                {
+                    General.AppendToFile(_LOGTOFILE, $"Database Name: {_dbname}\n");
+                    General.AppendToFile(_LOGTOFILE, $"Refresh Every { _interval} seconds. \n");
+                    General.AppendToFile(_LOGTOFILE, $"Table Name: {_table}\n");
+                    General.AppendToFile(_LOGTOFILE, $"Identity Seed: {_table_identity}\n");
+                    General.AppendToFile(_LOGTOFILE, $"\n");
+                }
             } catch (Exception ex)
             {
                 Console.WriteLine(ex.Message.ToString());

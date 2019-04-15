@@ -146,7 +146,6 @@ namespace tailSQLite
             header();
             if (!_showTables && _DoTail)
             {
-                //Timer t = new Timer(TimerCallback, null, 0, (_interval * 1000));
                 TimeSpan TimeToRun = new TimeSpan(0, 0, _interval);
                 t = new Timer(TimerCallback, null, TimeToRun, TimeToRun);
                 Console.WriteLine("Waiting for Results");
